@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 export class RegisterComponent implements OnInit, OnDestroy {
 
   isCargando: boolean
-  subscription: Subscription
+  subscription: Subscription = new Subscription()
 
 
   constructor(
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     public store: Store<AppState>
   ) { }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe
+    this.subscription.unsubscribe()
   }
 
   ngOnInit(): void {
